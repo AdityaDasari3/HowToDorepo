@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div id="loginSection">
+            <p>Hello, welcome to this website where anyone can easily make a video with photos.</p>
+            <a href="/login"><button>Login</button></a>
+            <a href="/signup"><button>Sign Up</button></a>
+        </div>
+        <div id="loggedInSection" style="display: none;">
+            <h1>Welcome, <span id="loggedInUsername"></span>!</h1>
+            <button id="logoutBtn" style="display: none;" onclick="logout()">Logout</button>
+            <h2>Upload Images</h2>
+            <button id="uploadBtn">Upload Images</button>
+            <input type="file" id="fileInput" style="display: none;" accept="image/*">
+            <div id="dragDropBox" style="border: 2px dashed #ccc; padding: 20px; text-align: center;">
+                <p>Drag and drop your pictures here.</p>
+            </div>
+
+            <div>
+                <a href="/video"><button>Create Your Video</button></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
+
+
